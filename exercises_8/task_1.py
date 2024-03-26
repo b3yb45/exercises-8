@@ -9,5 +9,5 @@ def filter_upper(in_char):
     return False
 
 
-upper_quant = len(list(filter(filter_upper, IN_STRING[I-1:J-1])))
+upper_quant = len(list(filter(filter_upper, IN_STRING[I-1:J])))
 print(upper_quant)
