@@ -24,9 +24,11 @@ def limit_execution_time(max_seconds, max_calls):
 def some_function():
     time.sleep(1)
 
+
 for _ in range(4):
     some_function()
 print('-------')
+
 
 for _ in range(20):
     some_function()
