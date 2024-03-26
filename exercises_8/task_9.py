@@ -5,7 +5,7 @@ import yaml
 
 def to_format(output_format=None):
     def decorator(func):
-        def wrapper(*args, **kwargs):
+        def inner(*args, **kwargs):
             result = func(*args, **kwargs)
             
             if output_format == 'xml':
@@ -17,7 +17,7 @@ def to_format(output_format=None):
             else:
                 return json.dumps(result)
         
-        return wrapper
+        return inner
     return decorator
 
 
@@ -36,6 +36,6 @@ def example_yaml():
     return {"key": "value"}
 
 
-print(example_json())  # Output: {"key": "value"}
-print(example_xml())   # Output: b'<data><key>value</key></data>'
-print(example_yaml())  # Output: key: value
+print(example_json())
+print(example_xml())
+print(example_yaml())
